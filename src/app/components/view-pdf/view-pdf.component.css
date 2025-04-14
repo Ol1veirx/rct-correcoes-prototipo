@@ -1,0 +1,437 @@
+:root {
+    --primary-color: #4a77af;
+    --secondary-color: #3a5a80;
+    --light-gray: #f5f7fa;
+    --mid-gray: #e0e4e9;
+    --dark-gray: #788896;
+    --text-color: #333;
+    --success-color: #5cb85c;
+    --warning-color: #f0ad4e;
+    --error-color: #d9534f;
+    --border-radius: 12px;
+}
+
+.container {
+    width: 100vw;
+    margin: 20px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 85vh;
+    gap: 20px;
+}
+
+.main-title {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: var(--secondary-color);
+    text-align:left;
+}
+
+.subtitle {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 24px;
+    color: var(--dark-gray);
+    text-align: left;
+}
+
+.content-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.book-section,
+.errors-section {
+    flex: 1;
+    min-width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.274);
+    overflow: hidden;
+    border: 1px solid var(--text-color);
+}
+
+.section-header {
+    background-color: white;
+    padding: 12px;
+    border-bottom: 1px solid var(--mid-gray);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-header h2 {
+    font-size: 16px;
+    margin: 0;
+    flex-grow: 1;
+    color: var(--secondary-color);
+}
+
+.section-icon {
+    color: #1351b4;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--dark-gray);
+    font-size: 14px;
+}
+
+.pagination-btn {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #4a77af;
+    background-color: var(--light-gray);
+    border-radius: 4px;
+    cursor: pointer;
+    color: #555;
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+    padding: 0;
+  }
+
+.pagination-btn:hover {
+    background-color: var(--mid-gray);
+}
+
+.livro,
+.falhas {
+    flex: 1;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    border-radius: 12px;
+}
+
+.livro-header,
+.falhas-header {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.livro-header,
+.falhas-header {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.pagina {
+    padding: 20px;
+    flex: 1;
+}
+
+.paginacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.falhas {
+    background-color: #f9f9f9;
+}
+
+.add-falha {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.form-falha {
+    padding: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.form-falha input,
+.form-falha textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 8px;
+    border-radius: 12px;
+    padding: 10px;
+    border: 1px solid var(--mid-gray);
+    border-radius: 12px;
+}
+
+.form-botoes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.accept-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.edit-button {
+    color: black;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    width: 80px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.489);
+    border-radius: 12px;
+}
+
+.cancel-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.lista-falhas {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.item-falha {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+}
+
+.item-vermelho {
+    background-color: #f8d7da;
+}
+
+.item-verde {
+    background-color: #d4edda;
+}
+
+.paginacao button {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.318);
+    border: 1px solid var(--primary-color);
+    color: black;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Book content with line numbers */
+.book-content {
+    padding: 0;
+    height: 400px;
+    overflow-y: auto;
+    border: 1px solid var(--text-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.274);
+    border-radius: 8px;
+    margin: 15px 10px 20px 10px;
+}
+
+.line-numbers {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.line-number {
+    width: 30px;
+    text-align: right;
+    padding: 4px 8px;
+    color: var(--dark-gray);
+    background-color: var(--light-gray);
+    font-family: monospace;
+    user-select: none;
+}
+
+.line-content {
+    padding: 4px 10px;
+    border-bottom: 1px solid var(--mid-gray);
+}
+
+/* Error form styles */
+.error-form {
+    padding: 16px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--mid-gray);
+    border-radius: var(--border-radius);
+    font-size: 14px;
+}
+
+.select-wrapper {
+    position: relative;
+    display: block;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.274);
+    border-radius: 8px;
+}
+
+.select-wrapper select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--mid-gray);
+    border-radius: var(--border-radius);
+    appearance: none;
+    background-color: white;
+    font-size: 14px;
+}
+
+.select-wrapper::after {
+    content: "▼";
+    font-size: 12px;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+textarea.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 100px;
+    background-color: white;
+    color: #333;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+input.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    background-color: white;
+    color: #333;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+.register-btn {
+    width: 100%;
+    background-color: #4a77af;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.register-btn:hover {
+    background-color: #1613c2;
+}
+
+/* Registered errors styles */
+.registered-errors {
+    padding: 16px;
+    border-top: 1px solid var(--mid-gray);
+}
+
+.registered-errors h3 {
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.error-item {
+    background-color: var(--light-gray);
+    border-radius: var(--border-radius);
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #e0e4e9;
+    border-radius: 8px;
+}
+
+.error-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.error-page-line {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.error-tag {
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    color: white;
+}
+
+.error-tag-grammatic {
+    background-color: #f0ad4e;
+}
+
+.error-tag-orthographic {
+    background-color: #d9534f;
+}
+
+.error-description {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,121 @@
+<div class="container">
+    <div class="header-content">
+        <h1 class="main-title">Sistema de Correção de Livros</h1>
+        <p class="subtitle">Identifique e registre falhas encontradas no conteúdo.</p>
+    </div>
+
+  <div class="content-container">
+    <div class="book-section">
+      <div class="section-header">
+        <div class="section-icon">
+          <i class="fas fa-book"></i>
+        </div>
+        <h2>Conteúdo do Livro</h2>
+        <div class="pagination">
+          <button class="pagination-btn">&lt;</button>
+          <span>Página {{ paginaAtual }} de {{ totalPaginas }}</span>
+          <button class="pagination-btn">&gt;</button>
+        </div>
+      </div>
+
+      <div class="book-content">
+        <table class="line-numbers">
+          <tbody>
+            <tr>
+              <td class="line-number">1</td>
+              <td class="line-content">O Programa Nacional do Livro Didático (PNLD) representa uma das mais importantes politicas públicas</td>
+            </tr>
+            <tr>
+              <td class="line-number">2</td>
+              <td class="line-content">educacionais do Brasil, garantindo o acesso a materiais didáticos de qualidade.</td>
+            </tr>
+            <tr>
+              <td class="line-number">3</td>
+              <td class="line-content">Criado em 1985, o PNLD evoluio ao longo das décadas, ampliando seu alcanse e aprimorando seus critérios</td>
+            </tr>
+            <tr>
+              <td class="line-number">4</td>
+              <td class="line-content">de avaliação. Hoje, o programa não apenas distribue livros impressos, mas também oferece</td>
+            </tr>
+            <tr>
+              <td class="line-number">5</td>
+              <td class="line-content">conteúdos digitais e plataformas interativas que complementam o aprendizado em sala de aula.</td>
+            </tr>
+            <tr>
+              <td class="line-number">6</td>
+              <td class="line-content">Os principais objetivos do PNLD incluem:</td>
+            </tr>
+            <tr>
+              <td class="line-number">7</td>
+              <td class="line-content">- Garantir o acesso universal a materiais didáticos de qualidade;</td>
+            </tr>
+            <tr>
+              <td class="line-number">8</td>
+              <td class="line-content">- Contribuir para a equidade educacional em diferentes regiões do páis;</td>
+            </tr>
+            <tr>
+              <td class="line-number">9</td>
+              <td class="line-content">- Respeitar a pluralidade e diversidade social e cultural brasileira;</td>
+            </tr>
+            <tr>
+              <td class="line-number">10</td>
+              <td class="line-content">- Apoiar a implementação da Base Nacional Comum Curricular (BNCC).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="errors-section">
+      <div class="section-header">
+        <div class="section-icon">
+          <i class="fas fa-info-circle"></i>
+        </div>
+        <h2>Registro de Falhas</h2>
+      </div>
+
+      <div class="error-form">
+        <div class="form-group">
+          <label for="errorType">Tipo de Falha</label>
+          <div class="select-wrapper">
+            <select [(ngModel)]="falha.tipo" id="errorType">
+              <option value="" disabled selected>Selecione o tipo</option>
+              <option value="Erro Ortográfico">Erro Ortográfico</option>
+              <option value="Erro Gramatical">Erro Gramatical</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="lineNumber">Número da Linha</label>
+          <input type="number" [(ngModel)]="falha.linha" id="lineNumber" placeholder="Ex: 5" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="errorDescription">Descrição da Falha</label>
+          <textarea [(ngModel)]="falha.descricao" id="errorDescription" rows="4" placeholder="Descreva detalhadamente a falha encontrada..." class="form-control"></textarea>
+        </div>
+
+        <button type="button" (click)="salvarFalha()" class="register-btn">
+          <i class="fas fa-save"></i> Registrar Falha
+        </button>
+      </div>
+
+      <div class="registered-errors">
+        <h3>Falhas Registradas</h3>
+
+        <div class="error-item" *ngFor="let f of falhas; let i = index">
+          <div class="error-header">
+            <span class="error-page-line">Página {{ f.pagina }}, Linha {{ f.linha }}</span>
+            <span class="error-tag" [ngClass]="{'error-tag-grammatic': f.tipo === 'Erro Gramatical', 'error-tag-orthographic': f.tipo === 'Erro Ortográfico'}">
+              {{ f.tipo }}
+            </span>
+          </div>
+          <div class="error-description">
+            {{ f.descricao }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

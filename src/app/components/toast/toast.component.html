@@ -1,0 +1,15 @@
+<div
+  class="toast-container"
+  [class]="type"
+  [@toastAnimation]="visible ? 'visible' : 'hidden'"
+  *ngIf="message">
+  <div class="toast-content">
+    <span class="toast-icon">
+      <span *ngIf="type === 'error'">⚠️</span>
+      <span *ngIf="type === 'success'">✅</span>
+      <span *ngIf="type === 'info'">ℹ️</span>
+    </span>
+    <span class="toast-message">{{ message }}</span>
+  </div>
+  <button class="toast-close" (click)="hide()">×</button>
+</div>

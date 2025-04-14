@@ -1,0 +1,20 @@
+<div class="page-container">
+    <div class="login-box">
+        <h2>Sistema de Correção de Livros</h2>
+        <p>
+            Acesse o sistema utilizando seu token de acesso
+        </p>
+        <div class="form-group">
+            <label class="label-form" for="token">Token de Acesso</label>
+            <input type="text" [(ngModel)]="token" placeholder="Digite o token" />
+        </div>
+        <div class="form-group">
+            <button (click)="login()">Acessar o Sistema</button>
+        </div>
+        <div class="problem-box">
+            <span>
+                Em caso de problemas, entre em contato com o suporte técnico.
+            </span>
+        </div>
+    </div>
+</div>

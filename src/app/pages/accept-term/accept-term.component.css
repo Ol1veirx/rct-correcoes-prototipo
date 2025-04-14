@@ -1,0 +1,134 @@
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.term-box {
+    width: 80%;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 12px 15px rgba(0, 0, 0, 0.08);
+    line-height: 1.6;
+  }
+
+  .term-box h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 10px;
+  }
+
+  .term-box h3 {
+    color: #3498db;
+    font-size: 1.3rem;
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+
+  .term-box p {
+    color: #555;
+    margin-bottom: 16px;
+    text-align: justify;
+  }
+
+  .term-box ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+
+  .term-box li {
+    margin-bottom: 8px;
+    color: #555;
+  }
+
+  .consent-group {
+    margin: 25px 0;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    border-left: 4px solid #1351B4;
+  }
+
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500;
+    color: #2c3e50;
+  }
+
+  .checkbox-container input[type="checkbox"] {
+    margin-right: 12px;
+    width: 18px;
+    height: 18px;
+    accent-color: #3498db;
+  }
+
+  .button-group {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .primary-button {
+    padding: 12px 28px;
+    background-color: #1351B4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .primary-button:hover:not([disabled]) {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .primary-button:active:not([disabled]) {
+    transform: translateY(0);
+  }
+
+  .primary-button[disabled] {
+    background-color: #b2c8d6;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  @media (max-width: 768px) {
+    .term-box {
+      width: 90%;
+      padding: 20px;
+    }
+
+    .header h1 {
+      font-size: 1.3rem;
+    }
+
+    .term-box h2 {
+      font-size: 1.3rem;
+    }
+  }

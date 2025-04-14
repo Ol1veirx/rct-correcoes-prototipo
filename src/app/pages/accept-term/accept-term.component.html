@@ -1,0 +1,50 @@
+<div class="page-container">
+    <header class="header">
+        <h1>Sistema para Cadastro de Falhas Pontuais de Ortografia/Gramática</h1>
+    </header>
+
+    <div class="term-box">
+        <h2>
+            Bem-vindo(a) ao Sistema de Cadastro de Falhas Pontuais de Ortografia e Gramática.
+        </h2>
+        <p>
+            Agradecemos por participar deste experimento, que visa aprimorar o processo de identificação de falhas pontuais na avaliação pedagógica das obras do PNLD. Sua análise é fundamental para a evolução dos nossos sistemas e a melhoria contínua dos nossos processos.
+        </p>
+
+        <h2>
+            Objetivo da Avaliação
+        </h2>
+        <p>
+            Nesta etapa, você revisará o conteúdo do livro apresentado e analisará o texto com foco em encontrar falhas pontuais nas seguintes categorias:
+        </p>
+        <ul>
+            <li>Ortografia: erros de escrita e acentuação</li>
+            <li>Gramática: erros de concordância e regência verbal ou nominal.</li>
+        </ul>
+
+        <h3>
+            Instruções
+        </h3>
+        <ul>
+            <li>Registre todas as falhas identificadas nos campos indicados.</li>
+            <li>O tempo para a avaliação será de 20 minutos a partir do clique no botão "Iniciar Avaliação"</li>
+            <li>Após o tempo limite, a avaliação será encerrada automaticamente.</li>
+            <li>Ao final, solicitaremos seu feedback por meio de um formulário para entendermos melhor sua experiência com o sistema.</li>
+        </ul>
+
+        <p>
+            Para continuar com a pesquisa, é necessário declarar sua concordância com o Termo de Consentimento Livre e Esclarecido. Para ler o termo completo, clique no link destacado acima.
+        </p>
+
+        <div class="consent-group">
+            <label class="checkbox-container">
+                <input type="checkbox" [(ngModel)]="acceptTerms" />
+                Li e concordo com o Termo de Consentimento Livre e Esclarecido
+            </label>
+        </div>
+
+        <div class="button-group">
+            <button [disabled]="!acceptTerms" (click)="startEvaluation()" class="primary-button">Iniciar Avaliação</button>
+        </div>
+    </div>
+</div>
